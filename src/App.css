@@ -88,23 +88,33 @@ button:hover:not(:disabled) {
 }
 
 .image-slider img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
+  width: 100vw; /* Limit the width to the browser's width */
+  max-height: 100vh; /* Limit the height to the browser's height */
+  object-fit: contain; /* Ensure the image fits without cropping or distortion */
+  display: block; /* Prevent extra spacing */
+  margin: auto; /* Center the image within the slider */
+}
+
+.close-slider,
+.exit-fullscreen {
+  position: absolute;
+  bottom: 20px; /* Position from the bottom */
+  font-size: 1.2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
 .close-slider {
-  position: absolute;
-  bottom: 20px; /* Position from the bottom */
-  left: 20px; /* Position from the left */
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 2rem;
-  cursor: pointer;
+  left: 20px; /* Align close button on the left */
 }
 
-.close-slider:hover {
+.exit-fullscreen {
+  left: 150px; /* Place exit fullscreen button next to close slider */
+}
+
+.close-slider:hover,
+.exit-fullscreen:hover {
   color: #ff0000;
 }

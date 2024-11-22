@@ -92,7 +92,6 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Image Storage App</h1>
       <input
         type="file"
         accept="image/*"
@@ -130,9 +129,14 @@ function App() {
             src={images[currentImageIndex].image}
             alt={`Slide ${currentImageIndex}`}
           />
-          <button className="close-slider" onClick={closeSlider}>
-            ×
-          </button>
+          <div className="slider-buttons">
+            <button className="close-slider" onClick={closeSlider}>
+              ×
+            </button>
+            <button className="exit-fullscreen" onClick={exitFullscreen}>
+              Exit Fullscreen
+            </button>
+          </div>
         </div>
       )}
     </div>
