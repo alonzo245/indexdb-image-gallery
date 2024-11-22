@@ -130,11 +130,14 @@ function App() {
             alt={`Slide ${currentImageIndex}`}
           />
           <div className="slider-buttons">
-            <button className="close-slider" onClick={closeSlider}>
+            <button
+              className="close-slider"
+              onClick={() => {
+                closeSlider();
+                exitFullscreen();
+              }}
+            >
               ×
-            </button>
-            <button className="exit-fullscreen" onClick={exitFullscreen}>
-              Exit Fullscreen
             </button>
           </div>
         </div>
